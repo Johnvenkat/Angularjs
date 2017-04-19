@@ -1,0 +1,24 @@
+<html>
+<head>
+<script>
+function validateForm() {
+    var x = document.forms["myform"]["name"].value;
+    if (x == null || x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+	var y= document.forms["myform"]["name"].value;
+	if(y== null || y=""){
+	alert("Password should enter only numbers");
+	return false; }
+}
+</script>
+</head>
+<body>
+<form name="myform" onsubmit="validateForm()">
+Name: <input type="text" name="name">
+Password: <input type="Password" name="pass" pattern="[0-9]*" inputmode="numeric">
+<input type="submit"   value="submit">
+</form>
+</body>
+</html>

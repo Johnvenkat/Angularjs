@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body ng-app="" align="center">
+<h1>Pick a topic:</h1>
+<form>
+  <input type="radio" ng-model="myVar" value="dogs">5-Bykes<br>
+  <input type="radio" ng-model="myVar" value="tuts">4-Coures<br>
+  <input type="radio" ng-model="myVar" value="cars">3-Cars
+</form>
+<div ng-switch="myVar">
+  <div ng-switch-when="dogs">
+     <h1>Bike</h1>
+     <p>Welcome to a world of bikes.</p>
+       <input type="checkbox" name="vehicle" value="Bike"> I have a Herohounda bike<br>
+       <input type="checkbox" name="vehicle" value="Bike"> I have a Pulsor bike<br>
+       <input type="checkbox" name="vehicle" value="Bike"> I have a Unicon bike<br>
+       <input type="checkbox" name="vehicle" value="Bike"> I have a Cbz bike<br>
+       <input type="checkbox" name="vehicle" value="Bike"> I have a Activa bike
+  </div>
+  <div ng-switch-when="tuts">
+     <h1>Coures</h1>
+     <p>Learn from examples.</p>
+      <input type="checkbox" name="vehicle" value="Bike">Networking <br>
+      <input type="checkbox" name="vehicle" value="Bike">Testing <br>
+      <input type="checkbox" name="vehicle" value="Bike">Dotnet  <br>
+      <input type="checkbox" name="vehicle" value="Bike">Java
+  </div>
+  <div ng-switch-when="cars">
+     <h1>Cars</h1>
+     <p>Read about cars.</p>
+       <input type="checkbox" name="vehicle" value="Car"> I have a indica car<br>
+       <input type="checkbox" name="vehicle" value="Car"> I have a Honda car<br>
+       <input type="checkbox" name="vehicle" value="Car"> I have a inova car<br>
+  </div>
+</div>
+</body>
+</html>
+

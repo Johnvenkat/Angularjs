@@ -1,0 +1,63 @@
+<html ng-app="venkat">
+   <head>
+       <title>Ng-repeat</title>
+       <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+   </head>
+<body ng-controller="mycontroller">
+<div align="center">
+    <div>
+		<table>
+			<tr><td>Name:</td><td><input ng-model="name"></td></tr>
+			<tr><td>Salary:</td><td><input ng-model="salary"></td></tr>
+			<tr><td>Company:</td><td><input ng-model="company"></td></tr>
+			<tr><td colspan="2" align="center"><button ng-click="AddRow()">Add Row</button></td></tr>
+		</table>
+	</div>
+<table border="1">
+		<tr><th>Name</th><th>Salary</th><th>Company</th><th>Action</th></tr>
+		<tr ng-repeat="x in details | filter:searchKeyword ">
+		<td>{{x.name}}</td>
+		<td>{{x.salary}}</td>
+		<td>{{x.company}}</td>
+		<td><input type="button" value="Remove" ng-click="RemoveRow(details.Name)"></td></tr>
+</table>
+</div>
+</body>
+<script>
+     var myapp=angular.module('venkat', []);
+     myapp.controller('mycontroller', function($scope){
+     $scope.details=[{name:'Venkat', salary:10000, company:'Olive'},
+                     {name:'John', salary:25000, company:'QualityThought'},
+				     {name:'Raju', salary:60000, company:'Olive'},
+				     {name:'Raveena', salary:25000, company:'Olive'},
+				     {name:'Joanna', salary:15000, company:'Mindtree'}];
+     $scope.AddRow=function(){
+                         $scope.details.push({name:'$scope.name',salary:'$scope.salary',company:'$scope.company'});
+						 $scope.name='';
+                         $scope.salary='';
+                         $scope.company='';
+						 }
+     $scope.RemoveRow=function(Name){
+                             var index= -1;
+							 var com=eval($scope.details);
+							 for(var i=0; i<com; i++)
+							 {
+							 if(com[i].name === name)
+							 {
+							 index = i;
+							 break;							 
+							 }
+							 }
+							 if(index === -1)
+							 {alert("something gone wrong");
+							 }
+							 $scope.details.splice(index , 1);
+        };						 
+    });
+</script>
+</html>
+
+
+
+
+

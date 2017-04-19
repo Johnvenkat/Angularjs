@@ -1,0 +1,29 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+<body ng-app="myapp" ng-controller="mycontroller">
+<h3> Radio and checkbox examples </h3>
+<div ng-repeat="x in details">
+<input type="radio" name="abc" value="xyz" ng-click="radiosubmit(x)">
+{{x.number}}
+</div>
+<input type="checkbox" name="check" ng-mogel="checked" value="xyz">
+</body>
+<script>
+var myapp1=angular.module('myapp', []);
+myapp1.controller('mycontroller', function($scope){
+$scope.details=[{name:'Venkat',email:'venkat@gmail.com',course:'Php',number:1},
+                {name:'John',email:'john@gmail.com',course:'Drupal',number:2},
+				{name:'Raju',email:'raju@gmail.com',course:'Angular',number:3},
+				{name:'xxxx',email:'xxxx@gmail.com',course:'xxxss',number:4},
+				{name:'dbfgb',email:'fgbfgb@gmail.com',course:'fgbfg',number:5}];
+				
+				
+	$scope.radiosubmit=function(check){
+	
+	}
+	
+});
+ </script>
+</html>
