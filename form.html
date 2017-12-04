@@ -5,8 +5,7 @@
    </head>
    <body>
       <h2 align="center">AngularJS Sample Application</h2>
-      <div ng-app = "mainApp" ng-controller = "studentController" align="center">
-         
+      <div ng-app = "mainApp" ng-controller = "studentController" align="center"> 
          <form name = "studentForm" novalidate>
             <table>
                <tr>
@@ -16,8 +15,7 @@
                         <span ng-show = "studentForm.firstname.$error.required">First Name is required.</span>
                      </span>
                   </td>
-               </tr>
-               
+               </tr>             
                <tr>
                   <td>Last Name</td>
                   <td><input name = "lastname"  type = "text" ng-model = "lastName" required>
@@ -25,8 +23,7 @@
                         <span ng-show = "studentForm.lastname.$error.required">Last Name is required.</span>
                      </span>
                   </td>
-               </tr>
-               
+               </tr>               
                <tr>
                   <td>Email ID: </td><td><input name = "email" type = "email" ng-model = "email" length = "100" required>
                      <span style = "color:red" ng-show = "studentForm.email.$dirty && studentForm.email.$invalid">
@@ -37,31 +34,25 @@
                </tr>
                <tr>
                   <td align="center" colspan="2">
-				  <button ng-click = "reset()">Reset</button>
+		     <button ng-click = "reset()">Reset</button>
                      <button ng-disabled = "studentForm.firstname.$dirty &&
                         studentForm.firstname.$invalid || studentForm.lastname.$dirty &&
                         studentForm.lastname.$invalid || studentForm.email.$dirty &&
                         studentForm.email.$invalid" ng-click="submit()">Submit</button>
                   </td>
-               </tr>
-					
+               </tr>			
             </table>
          </form>
       </div>
-      
       <script>
          var mainApp = angular.module("mainApp", []);
-         
          mainApp.controller('studentController', function($scope) {
             $scope.reset = function(){
                $scope.firstName = "";
                $scope.lastName = "";
                $scope.email = "";
             }
-            
-           
          });
       </script>
-      
    </body>
 </html>
